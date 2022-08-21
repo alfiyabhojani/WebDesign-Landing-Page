@@ -2,94 +2,6 @@
   margin: 0;
   padding: 0;
 }
-/*
-.main-di {
-  position: relative;
-}
-.back {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  height: 800px;
-  width: 800px;
-}
-.intro {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.vector-img {
-  position: absolute;
-  bottom: 158px;
-  right: 670px;
-}
-.vector-dot {
-  position: absolute;
-  bottom: 258px;
-  right: 694px;
-}
-.signin-btn {
-  position: absolute;
-  top: 19px;
-  right: 166px;
-  width: 130px;
-  height: 43px;
-  font-size: 26px;
-  border: 5px;
-  border-radius: 20px;
-  background-color: #9550b3;
-  color: whitesmoke;
-  font-weight: bold;
-}
-.nav-items {
-  display: flex;
-  position: relative;
-  bottom: -14px;
-  left: 600px;
-
-  align-items: center;
-}
-.nav-item {
-  justify-content: space-between;
-  padding: 20px;
-  font-size: 25px;
-  color: darkmagenta;
-}
-.logo {
-  position: absolute;
-  padding-top: 20px;
-  padding-left: 50px;
-}
-.learn-more-btn {
-  position: absolute;
-  bottom: 129px;
-  left: 163px;
-  height: 60px;
-  width: 273px;
-  font-size: 30px;
-  font-weight: 900;
-  border: 5px;
-  border-radius: 20px;
-  background-color: #9550b3;
-  color: whitesmoke;
-  font-weight: bold;
-}
-.left-section h1 {
-  font-size: 90px;
-  position: fixed;
-  top: 25%;
-  left: 169px;
-  color: blueviolet;
-}
-.left-section h4 {
-  top: 300px;
-  left: 196px;
-  position: relative;
-  font-size: 24px;
-  font-weight: 200;
-  color: rgb(153, 92, 92);
-} */
-
 /* css with grid and flex */
 
 * {
@@ -104,17 +16,12 @@ body {
   background-position: right;
   background-position-y: top;
 }
-.intro-section {
-  display: flex;
-  justify-content: space-between;
-}
-.intro {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 .title {
   justify-content: space-between;
   z-index: 1;
+  display: flex;
+  cursor: pointer;
 }
 .logo {
   margin-top: 20px;
@@ -122,9 +29,10 @@ body {
 }
 .nav-items {
   display: inline-flex;
-  margin-left: 300px;
+  margin-left: 250px;
+  margin-top: 25px;
 }
-.nav-item {
+.nav-items li {
   margin: 2px 20px;
   justify-content: space-between;
   padding: 0 20px;
@@ -132,6 +40,78 @@ body {
   font-size: 25px;
   color: darkmagenta;
   z-index: 1;
+}
+.nav-items li a {
+  text-decoration: none;
+  transition: 0.5s ease-in;
+  border-radius: 15px;
+  list-style: none;
+  padding: 10px;
+}
+.nav-items li a:hover {
+  color: white;
+  background-color: black;
+}
+.signin-btn {
+  align-items: flex-end;
+  z-index: 2;
+  float: right;
+  margin-right: 20px;
+  width: 130px;
+  height: 43px;
+  font-size: 26px;
+  border: 5px;
+  border-radius: 20px;
+  background-color: #9550b3;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.toggle {
+  display: none;
+  font-size: 30px;
+}
+@media only screen and (max-width: 480px) {
+  .logo {
+    margin-top: 0;
+    margin-left: 20px;
+    width: 20%;
+  }
+  .nav-items li {
+    margin: 0 0;
+    font-size: 16px;
+    display: flex;
+  }
+  .nav-items {
+    display: none;
+    margin-left: 0;
+    margin-top: 25px;
+  }
+
+  .toggle {
+    display: block;
+    padding: 10px 0;
+  }
+  .signin-btn {
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  .toggle:hover .nav-items {
+    display: block;
+  }
+}
+
+/* main */
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+}
+.intro {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .left-section h1 {
   margin-top: 100px;
@@ -160,21 +140,7 @@ body {
   color: whitesmoke;
   font-weight: bold;
 }
-.signin-btn {
-  align-items: flex-end;
-  z-index: 2;
-  float: right;
-  margin-right: 20px;
-  width: 130px;
-  height: 43px;
-  font-size: 26px;
-  border: 5px;
-  border-radius: 20px;
-  background-color: #9550b3;
-  color: whitesmoke;
-  font-weight: bold;
-  margin-top: 20px;
-}
+
 .vector-img {
   position: absolute;
   top: 600px;
@@ -184,4 +150,42 @@ body {
   position: absolute;
   top: 610px;
   right: 823px;
+}
+@media only screen and (max-width: 480px) {
+  .intro-section {
+    display: block;
+  }
+  .left-section h1 {
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 40px;
+  }
+  .left-section h4 {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 20px;
+    line-height: normal;
+  }
+  .learn-more-btn {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .vector-img {
+    width: 40px;
+    height: 100%;
+    left: 30px;
+    top: 280px;
+  }
+  .vector-dot {
+    right: 0;
+    left: 50px;
+    top: 570px;
+    width: 12px;
+  }
+  .intro {
+    margin-top: 20px;
+    width: 80%;
+    height: 100%;
+  }
 }
